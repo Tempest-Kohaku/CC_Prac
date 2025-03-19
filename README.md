@@ -1,60 +1,86 @@
-Here’s a `README.md` file for running the Java program:
+Below is a very simple, step-by-step guide on how to create, compile, and run Java files in the Command Prompt (CMD). It also explains the order in which to run a server file and a client file.
 
 ---
 
-# How to Run `Any Java File in CMD`
+# How to Run Any Java File in CMD
 
-This guide will help you compile and run for example the `IsPrime_Server.java` file.
+This guide will help you compile and run, for example, the `IsPrime_Server.java` file, as well as a client file that connects to it.
 
-## Prerequisites
+## 1. Write (or Copy) the Java Code into Notepad
 
-- Ensure you have **Java Development Kit (JDK)** installed on your system.
-- Add Java to your system **PATH** if not already configured.
-- Navigate to the directory containing `IsPrime_Server.java` before running the commands.
+1. **Open Notepad** (or any basic text editor).
+2. **Paste or type** your Java code into the blank document.
+3. **Save the file**. In the “Save as type” dropdown, select **All Files** (if available). Then name your file with a `.java` extension, for example:
+   ```
+   IsPrime_Server.java
+   ```
 
-## Steps to Compile and Run
+## 2. Make Sure Java Is Installed
 
-1. **Open Command Prompt**
-   - Press `Win + R`, type `cmd`, and hit `Enter`.
+1. **Check if Java is installed** by opening Command Prompt and typing:
+   ```sh
+   java -version
+   ```
+2. If you see a version number, Java is installed. If not, download and install the [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html).
+3. **(Optional)** Add Java to your system **PATH** if you haven’t already, so you can run `javac` and `java` from any folder.
 
-2. **Navigate to the Directory**
-   - Use the `cd` command to move to the folder where your Java file is located:
+## 3. Open Command Prompt
+
+1. Press **Win + R** on your keyboard.
+2. Type `cmd` and hit **Enter**.
+
+## 4. Navigate to the Folder with Your Java File
+
+Use the `cd` (change directory) command to go to the folder where you saved your `.java` file. For example:
+```sh
+cd C:\Games\Java Introduction\src\kratos
+```
+Make sure to adjust this path if your file is in a different location.
+
+## 5. Compile the Java File
+
+Type the following command to compile the `.java` file:
+```sh
+javac IsPrime_Server.java
+```
+- If it’s successful, you won’t see any errors, and a new file called `IsPrime_Server.class` should appear in the same folder.
+
+## 6. Run the Server File First
+
+1. Run the compiled server program by typing:
+   ```sh
+   java IsPrime_Server
+   ```
+2. You should see output like:
+   ```
+   Server Started..............
+   ```
+   This means your server is now listening for connections.
+
+## 7. Run the Client File
+
+- **After** the server is up and running, you can compile and run the client file (e.g., `IsPrime_Client.java`) in the same way:
+  1. Compile:
      ```sh
-     cd C:\Games\Java Introduction\src\kratos
+     javac IsPrime_Client.java
      ```
-
-3. **Compile the Java File**
-   - Run the following command to compile `IsPrime_Server.java`:
+  2. Run:
      ```sh
-     javac IsPrime_Server.java
+     java IsPrime_Client
      ```
-   - If successful, no errors will be displayed.
-
-4. **Run the Compiled Java Program**
-   - Execute the program using:
-     ```sh
-     java IsPrime_Server
-     ```
-   - You should see output similar to:
-     ```
-     Server Started..............
-     ```
+- The client should connect to the server and communicate as intended.
 
 ## Troubleshooting
 
-- If `javac` or `java` commands are not recognized, check if Java is installed:
-  ```sh
-  java -version
-  ```
-  If not installed, download and install [JDK](https://www.oracle.com/java/technologies/javase-downloads.html).
-  
-- Ensure that you're running the commands inside the correct directory.
+- If you see a message like `'javac' is not recognized`, it means Java isn’t set up properly or isn’t on your system PATH.
+- Make sure the **server** is running before starting the **client**. Otherwise, the client might fail to connect.
+- Check your firewall settings if you’re having issues with the server listening on a port.
 
 ## Additional Notes
 
-- If `IsPrime_Server` depends on other files, make sure they are compiled too.
-- If the program is a server, ensure firewall permissions are set correctly.
+- Always compile **all** the necessary Java files before running them.
+- Keep the server running in its own Command Prompt window so the client can connect to it.
 
 ---
 
-Save this as `README.md` in the project directory. Let me know if you need further modifications! 🚀
+**That’s it!** Follow these steps in order, and you should be able to run both the server and the client successfully.
