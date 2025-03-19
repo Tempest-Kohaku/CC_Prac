@@ -2,9 +2,9 @@ Here’s a `README.md` file for running the Java program:
 
 ---
 
-# How to Run `IsPrime_Server.java`
+# How to Run `Any Java File in CMD`
 
-This guide will help you compile and run the `IsPrime_Server.java` file.
+This guide will help you compile and run for example the `IsPrime_Server.java` file.
 
 ## Prerequisites
 
